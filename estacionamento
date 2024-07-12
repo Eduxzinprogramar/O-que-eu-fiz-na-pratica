@@ -1,0 +1,59 @@
+using System;
+using System.ComponentModel.Design;
+using System.Runtime.Intrinsics.Arm;
+
+namespace Projeto_do_Video
+{
+    internal class Program
+    {
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Bem vindo ao estacionamento Stop Car!");
+            Console.WriteLine("Reponda corretamente essas perguntas para fazer o seu cadastro!");
+            Console.WriteLine("Digite o seu nome completo:  ");
+
+            string NomeCompleto = Console.ReadLine();
+
+            Console.WriteLine("Digite o seu email principal:  ");
+
+            string EmailPrincipal = Console.ReadLine();
+
+            Console.WriteLine("Digite o seu número de telefone:  ");
+
+            string NúmeroDeTelefone = Console.ReadLine();
+
+            Console.WriteLine("Digite o seu endereço completo:  ");
+
+            string EndereçoCompleto = Console.ReadLine();
+
+            Console.WriteLine("O valor da diária é de R$ 12,00!");
+            Console.WriteLine("Digite a data de entrada:  ");
+
+            string DataDeEntrada = Console.ReadLine();
+
+            Console.WriteLine("Digite a data de saída: ");
+
+            string DataDeSaída = Console.ReadLine();
+            Console.WriteLine($"Seu cadastro, Deseja confirmar? : \n{NomeCompleto}\n{ EmailPrincipal}\n{NúmeroDeTelefone}\n{EndereçoCompleto}\n{DataDeEntrada}\n{DataDeSaída}, respectivamente (sim/não)");
+
+            string Comfirmar = Console.ReadLine();
+
+            if (Comfirmar.ToLower() == "sim")
+            {
+                Console.WriteLine("Obrigado pela preferência, volte sempre!");
+            }
+            else if (Comfirmar.ToLower() == "não")
+            {
+                Console.WriteLine("Então, por favor, responda as perguntas novamente:  ");
+                Main(args);
+            }
+            else
+            {
+                Console.WriteLine("Responda somente com sim ou não!");
+            }
+
+            Console.ReadLine();
+        }
+    }
+}
